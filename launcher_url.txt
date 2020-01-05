@@ -1,1 +1,1 @@
-https://github.com/TheLuigiplayer/catoupdates/raw/master/CA-TO%20Launcher.exe
+https://github.com/TheLuigiplayer/catoupdates/releases/download/v1.0/CA-TO.Launcher.exe
