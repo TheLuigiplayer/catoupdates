@@ -1,5 +1,4 @@
 # catoupdates GitHub
-
 #Launcher Files
 
 launcher_url.txt : Beinhaltet die URL zum Download der neusten Launcher Version
