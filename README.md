@@ -1,8 +1,11 @@
 # catoupdates GitHub
+
 #Launcher Files
+
 launcher_url.txt : Beinhaltet die URL zum Download der neusten Launcher Version
+
 launcher_version.txt : Beinhaltet die Versionsnummer des neusten Launchers
-CA-TO Launcher.exe : Neuster Launcher (Anwendung)
+
 index.html : Website die vom Launcher aufgerufen wird um Neuigkeiten anzuzeigen
 
 #CA-TO Files
