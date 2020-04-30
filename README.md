@@ -14,3 +14,7 @@ version.txt :           Beinhaltet die neuste Versionsnummer von CA-TO (Welche i
 update_url.txt :        Beinhaltet die URL zum Download des neusten Updates (cato-update.zip)
 
 version_url.txt :        Beinhaltet die URL zum Download der neusten Version (cato-version.zip)
+
+#Neuste Releases:
+
+30.04.2020 : CA-TO Launcher & CA-TO(Demo 0.06)
