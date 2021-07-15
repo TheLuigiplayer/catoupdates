@@ -17,5 +17,5 @@ version_url.txt :        Beinhaltet die URL zum Download der neusten Version (ca
 
 #Neuste Releases:
 
-09.06.2020 : CA-TO (Demo 0.063)
-30.04.2020 : CA-TO Launcher
+15.07.2021 : CA-TO (Demo 0.08)
+17.12.2020 : CA-TO Launcher v1.5
