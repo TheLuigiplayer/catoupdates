@@ -1,230 +1,187 @@
-<html>
-    <head>
-		<link rel="shortcut icon" href="favicons/favicon.ico">
-		<link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
-		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
-        <title>Cast Away - The Oddysee</title>
-        <style>
-            * {
-                box-sizing: border-box;
-				max-width: 750;
-				margin-left:auto;
-				margin-right:auto;
-            }
-            body{
-                color:aliceblue;
-                background: #212f3e;
-                font-family:inherit;
-            }
-            p:last-child {
-                margin-bottom: 0;
-            }
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-            li {
-                background: #26384d;
-                margin-bottom: 1em;
-                padding: 1em;
-            }
-            h1 {
-                margin-top: -0.5em;  
-                font-size: 0.8em;
-                color:azure;
-				text-align: left;
-            }
-			h2 {
-                margin-top: -0.5em;  
-                font-size: 1.0em;
-                color:azure;
-				text-align: center;
-            }
-            h3 {
-                margin-top: 0em;  
-                font-size: 1.8em;
-                color:darkorange;
-            }
-            img {
-                width: 100%;
-                max-width: 750;
-            }
-			/* width */
-			::-webkit-scrollbar {
-			  width: 10px;
-			}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cast Away - The Oddysee</title>
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+    <style>
+        :root {
+            --bg-top: #0B1026;
+            --bg-bottom: #070B1D;
+            --card: #141B3D;
+            --card-light: #1B2450;
+            --stroke: #2A3563;
+            --gold: #F5B301;
+            --blue: #3B82F6;
+            --blue-hover: #60A5FA;
+            --text: #E8ECFF;
+            --muted: rgba(255, 255, 255, 0.65);
+            --radius: 14px;
+        }
+        * { box-sizing: border-box; }
+        html { color-scheme: dark; }
+        body {
+            margin: 0;
+            color: var(--text);
+            background: linear-gradient(var(--bg-top), var(--bg-bottom)) fixed;
+            font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+        .page-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 16px; }
+        .page-head .game { color: var(--gold); font-weight: 600; }
+        .page-head .rest { color: var(--muted); font-size: 14px; }
 
-			/* Track */
-			::-webkit-scrollbar-track {
-			  background: #19232E; 
-			}
-			 
-			/* Handle */
-			::-webkit-scrollbar-thumb {
-			  background: #505050; 
-			}
+        .post {
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .post h2 { margin: 0 0 6px; font-size: 21px; font-weight: 600; color: #fff; line-height: 1.35; }
+        .post h2 .version { color: var(--gold); }
+        .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 14px; color: var(--muted); font-size: 13px; }
+        .chip {
+            border: 1px solid var(--stroke);
+            background: var(--card-light);
+            border-radius: 8px;
+            padding: 1px 8px;
+            font-size: 12px;
+            color: var(--text);
+        }
+        .post img { display: block; width: 100%; border: 1px solid var(--stroke); border-radius: 12px; margin: 0 0 14px; }
+        .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 14px; border: 1px solid var(--stroke); border-radius: 12px; overflow: hidden; }
+        .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .post a { color: var(--blue); text-decoration: none; }
+        .post a:hover { color: var(--blue-hover); text-decoration: underline; }
+        .post ul { margin: 0 0 12px; padding-left: 22px; }
+        .post ul li { margin: 2px 0; }
+        .post li::marker { color: var(--blue); }
+        .post p { margin: 0 0 12px; }
+        .post .body > :last-child { margin-bottom: 0; }
 
-			/* Handle on hover */
-			::-webkit-scrollbar-thumb:hover {
-			  background: #3B3B3B; 
-			}
-        
-        </style>   
-    </head>
-    <body>
-        <ul>
-			<li class="game_update">
-                <h3><center>Cast Away - The Oddysee Beta 0.10 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 20.05.2023</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/10.png" alt="Beta 0.10!"></p>
-                <p>Die Beta 0.10 für Cast Away - The Oddysee ist jetzt verfügbar! Sie beinhaltet das 9. Kapitel und mehr:</p>
-				<p>● Kapitel 9 hinzugefügt</p>
-                <p>● Anfang von Kapitel 10 hinzugefügt</p>
-                <p>● Item-Icons werden jetzt in Textboxen angezeigt</p>
-                <p>● Neue Gegner hinzugefügt</p>
-				<p>● Neue Spielmechanik wird eingeführt</p>
-				<p>● Hinweis-Texte hinzugefügt wenn Schlüssel abbrechen</p>
-				<p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2022/05/20/kapitel-9-beta-0-10/" target="_blank">hier</a> lesen!</p>
-            </li>
-			<li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.09 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 06.02.2022</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/9.png" alt="Demo 0.09!"></p>
-                <p>Die Demo 0.09 für Cast Away - The Oddysee ist jetzt verfügbar! Sie beinhaltet das 8. Kapitel und mehr:</p>
-				<p>● Kapitel 8 hinzugefügt</p>
-                <p>● Das Menü wurde farblich überarbeitet</p>
-                <p>● Neue Soundeffekte und Musik hinzugefügt</p>
-                <p>● Neue Gegner hinzugefügt</p>
-				<p>● Generelle Überarbeitungen in der Ruine (Kapitel 2)</p>
-				<p>● In Kämpfen gibt es jetzt Lebensbalken für die Gegner</p>
-				<p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2022/02/06/kapitel-8-demo-0-09/" target="_blank">hier</a> lesen!</p>
-            </li>
-			<li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.08 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 15.07.2021</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/8.png" alt="Demo 0.08!"></p>
-                <p>Die Demo 0.08 für Cast Away - The Oddysee ist jetzt verfügbar! Sie beinhaltet das 7. Kapitel und mehr:</p>
-				<p>● Kapitel 7 hinzugefügt</p>
-                <p>● Riesige Rolle der Erkenntnis hinzugefügt</p>
-                <p>● Bossgegner früherer Kapitel haben Spezialattacken erhalten</p>
-                <p>● Neue Gegner hinzugefügt</p>
-				<p>● Einige Quests wurden überarbeitet</p>
-				<p>● Lichtkegel im Labyrinth (und der Kanalisation) wurde um 200% vergrößert</p>
-				<p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2021/07/15/kapitel-7-demo-0-08/" target="_blank">hier</a> lesen!</p>
-            </li>
-			<li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.072 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 15.12.2020</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/7.png" alt="Demo 0.072!"></p>
-                <p>Die Demo 0.072 für Cast Away - The Oddysee ist jetzt verfügbar! Sie beinhaltet ein neues "Spiel laden" / "Spiel speichern" Menü und mehr:</p>
-				<p>● Neues "Spiel laden" bzw. "Spiel speichern" Menü</p>
-                <p>● In den Menüs "Status", "Ausrüstung" & "Fertigkeiten" kann jetzt mit "E" und "Q" navigiert werden</p>
-                <p>● Zwei neue Gebietskarten inklusive Quests hinzugefügt</p>
-                <p>● Neue Konfigurationsdatei hinzugefügt: "Video.cfg" (Mehr dazu im Changelog)</p>
-				<p>● Anpassung der Darstellung von Items im Inventar</p>
-				<p>● Anpassungen des Kampfsystems</p>
-				<p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2020/12/15/%C3%BCberarbeitungen-bugfixes-demo-0-072/" target="_blank">hier</a> lesen!</p>
-            </li>
-			<li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.07 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 06.12.2020</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/6.png" alt="Demo 0.07!"></p>
-                <p>Die Demo 0.07 für Cast Away - The Oddysee ist jetzt verfügbar! Sie beinhaltet das 6. Kapitel und mehr:</p>
-				<p>● Kapitel 6 hinzugefügt</p>
-                <p>● Geheimes MoleMan Minispiel hinzugefügt</p>
-                <p>● Neue Grabsteine hinzugefügt</p>
-                <p>● Es gibt neue und noch stärkere Gegner</p>
-				<p>● Neue Items und Quests hinzugefügt</p>
-				<p>● Das Kistenlagerungssystem in der Strandhütte wurde entfernt</p>
-				<p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2020/12/06/kapitel-6-demo-0-07/" target="_blank">hier</a> lesen!</p>
-            </li>
-			<li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.063 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 09.06.2020</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/5.png" alt="Demo 0.063!"></p>
-                <p>Die Demo 0.063 für Cast Away - The Oddysee ist jetzt verfügbar! Sie beinhaltet QoL Updates und das Ende für Kapitel 5:</p>
-				<p>● Ende für Kapitel 5 hinzugefügt</p>
-                <p>● Splashscreens bei Spielstart können jetzt mit Leertaste oder Enter übersprungen werden</p>
-                <p>● Man wird nur noch einmal bei Spielstart nach Vollbild gefragt</p>
-                <p>● Das Hauptmenü baut sich nur noch einmal auf sodass späteres wechseln ins Hauptmenü schneller geht</p>
-				<p>● Besitzt man bereits einen Spielstand, wird standardmäßig "Spiel Laden" ausgewählt</p>
-				<p>● Die verschiedenen Skelett-Typen wurden mehr individualisiert</p>
-				<p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2020/06/09/ende-von-kapitel-5-demo-0-063/" target="_blank">hier</a> lesen!</p>
-            </li>
-			<li class="game_stream">
-                <h3><center>Cast Away - The Oddysee Stream 16.05.2020 - DonF204</center></h3>
-                <h1>TheLuigiplayer - 17.05.2020</h1>
-				<p style="text-align:center;"><iframe width="725" height="400" src="https://www.youtube-nocookie.com/embed/8MFU6S4paXQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-            </li>
-		    <li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.062 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 06.05.2020</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/4.png" alt="Demo 0.062!"></p>
-                <p>Die Demo 0.062 für Cast Away - The Oddysee ist jetzt verfügbar! Sie konzentriert sich größtenteils auf Fehlerbehebungen und Anpassungen:</p>
-				<p>● Weitere Anpassungen bezüglich der Text-Lesbarkeit</p>
-                <p>● Stream-Modus wurde hinzugefügt (Deaktiviert Funktionen wie "Spiel Beenden")</p>
-                <p>● Neuer Ort für Configs: AppData/Roaming/Cast Away - The Oddysee/Configs</p>
-                <p>● Configs werden auch beim Laden eines bisherigen Spielstandes abgerufen</p>
-				<p>● Das Intro kann übersprungen werden wenn bereits Spielstände existieren</p>
-				<p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2020/05/06/bugfixes-anpassungen-demo-0-062/" target="_blank">hier</a> lesen!</p>
-            </li>
-            <li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.061 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 03.05.2020</h1>
-				<p style="text-align:center;"><img src="Launcher/Images/3.png" alt="Demo 0.061!"></p>
-                <p>Die Demo 0.061 für Cast Away - The Oddysee ist jetzt verfügbar! Sie konzentriert sich größtenteils auf Fehlerbehebungen und Anpassungen:</p>
-                <p>● Die Dialogschrift ist jetzt besser lesbar</p>
-                <p>● Rechtschreibfehler und Grammatik korrigiert</p>
-                <p>● Es wurde ein Grabstein für DonF204 hinzugefügt</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2020/05/03/bugfixes-anpassungen-demo-0-061/" target="_blank">hier</a> lesen!</p>
-            </li>
-			<li class="game_stream">
-                <h3><center>Cast Away - The Oddysee Stream 02.05.2020 - DonF204</center></h3>
-                <h1>TheLuigiplayer - 03.05.2020</h1>
-				<p style="text-align:center;"><iframe width="725" height="400" src="https://www.youtube-nocookie.com/embed/O60vscdC084" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-            </li>
-            <li class="game_update">
-                <h3><center>Cast Away - The Oddysee Demo 0.06 jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 20.04.2020</h1>
-                <p style="text-align:center;"><img src="Launcher/Images/2.png" alt="Demo 0.06!"></p>
-                <p>Die Demo 0.06 für Cast Away - The Oddysee ist jetzt verfügbar! Was ist neu:</p>
-                <p>● Ende von Kapitel 4</p>
-                <p>● Kapitel 5</p>
-                <p>● Spielstände und Screenshots werden jetzt in AppData/Roaming/Cast Away - The Oddysee/ gespeichert</p>
-                <p>● Zusätzliche Schriftarten müssen nicht länger installiert werden</p>
-                <p>● Neue Gegner</p>
-                <p>● Neue Items</p>
-                <p>● Überarbeitungen von Kapitel 1-4</p>
-                <p>● Überarbeitungen am Kampfsystem</p>
-                <p>● Fehlerbehebungen</p>
-                <p>● Und mehr!</p>
-                <p>Den genauen Changelog könnt ihr <a href="https://ca-to.jimdo.com/2019/10/02/kapitel-5-demo-0-06/" target="_blank">hier</a> lesen!</p>
-            </li>
-            <li class="game_update">
-                <h3><center>Der neue CA-TO Launcher ist jetzt verfügbar!</center></h3>
-                <h1>TheLuigiplayer - 20.04.2020</h1>
-                <p style="text-align:center;"><img src="Launcher/Images/1.png" alt="Launcher!"></p>
-                <p>Der neue Launcher für Cast Away - The Oddysee ist jetzt verfügbar! Über ihn lässt sich Cast Away - The Oddysee starten, installieren und updaten.</p>
-            </li>
-        </ul>
-    </body>
+        .notice {
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            color: var(--muted);
+        }
+
+        ::-webkit-scrollbar { width: 12px; height: 12px; }
+        ::-webkit-scrollbar-track { background: var(--bg-top); }
+        ::-webkit-scrollbar-thumb { background: var(--stroke); border-radius: 6px; border: 3px solid var(--bg-top); }
+        ::-webkit-scrollbar-thumb:hover { background: #3B4A7E; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="page-head">
+            <span class="game">Cast Away - The Oddysee</span>
+            <span class="rest">Neuigkeiten</span>
+        </header>
+        <div id="feed"><div class="notice">Lade Neuigkeiten…</div></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@18.1.0/lib/marked.umd.js"></script>
+    <script>
+        const POSTS_DIR = "Posts/";
+        const TYPE_LABELS = { update: "Update", stream: "Stream", launcher: "Launcher" };
+
+        function escapeHtml(value) {
+            return String(value ?? "")
+                .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        }
+
+        function parseFrontMatter(text) {
+            const match = text.match(/^\uFEFF?---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+            if (!match) return { fields: {}, body: text };
+            const fields = {};
+            for (const line of match[1].split(/\r?\n/)) {
+                const index = line.indexOf(":");
+                if (index <= 0) continue;
+                fields[line.slice(0, index).trim().toLowerCase()] = line.slice(index + 1).trim();
+            }
+            return { fields, body: text.slice(match[0].length) };
+        }
+
+        function formatDate(iso) {
+            const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso ?? "");
+            return match ? match[3] + "." + match[2] + "." + match[1] : "";
+        }
+
+        function titleHtml(title, version) {
+            const escaped = escapeHtml(title);
+            if (!version) return escaped;
+            const gold = escapeHtml(version);
+            const index = escaped.indexOf(gold);
+            if (index < 0) return escaped;
+            return escaped.slice(0, index) + '<span class="version">' + gold + "</span>" + escaped.slice(index + gold.length);
+        }
+
+        function linkifyNewTab(html) {
+            return html.replace(/<a href="(https?:[^"]*)"/g, '<a href="$1" target="_blank" rel="noopener"');
+        }
+
+        function postHtml(post) {
+            const parts = ['<article class="post">'];
+            parts.push("<h2>" + titleHtml(post.fields.title, post.fields.version) + "</h2>");
+
+            const metaText = [post.fields.author, formatDate(post.fields.date)]
+                .filter(Boolean).map(escapeHtml).join(" · ");
+            const typeLabel = TYPE_LABELS[post.fields.type] ?? "Update";
+            parts.push('<div class="meta"><span>' + metaText + '</span><span class="chip">' + typeLabel + "</span></div>");
+
+            if (post.fields.image)
+                parts.push('<img src="' + escapeHtml(post.fields.image) + '" alt="' + escapeHtml(post.fields.title) + '" loading="lazy">');
+
+            if (post.fields.video)
+                parts.push('<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/' +
+                    encodeURIComponent(post.fields.video) +
+                    '" title="YouTube-Video" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+
+            if (post.body.trim())
+                parts.push('<div class="body">' + linkifyNewTab(marked.parse(post.body)) + "</div>");
+
+            parts.push("</article>");
+            return parts.join("");
+        }
+
+        async function loadFeed() {
+            const feed = document.getElementById("feed");
+            try {
+                const indexResponse = await fetch(POSTS_DIR + "index.json", { cache: "no-cache" });
+                if (!indexResponse.ok) throw new Error("HTTP " + indexResponse.status);
+                const files = await indexResponse.json();
+
+                const posts = await Promise.all(files.map(async (file) => {
+                    try {
+                        const response = await fetch(POSTS_DIR + file, { cache: "no-cache" });
+                        if (!response.ok) return null;
+                        return parseFrontMatter(await response.text());
+                    } catch {
+                        return null;
+                    }
+                }));
+
+                const html = posts.filter(Boolean).map(postHtml).join("");
+                feed.innerHTML = html || '<div class="notice">Noch keine Neuigkeiten vorhanden.</div>';
+            } catch {
+                feed.innerHTML = '<div class="notice">Neuigkeiten konnten nicht geladen werden. Bitte lade die Seite neu.<br>' +
+                    '<span style="font-size: 12px; opacity: .7;">(Hinweis: Beim Öffnen als lokale Datei blockieren Browser das Nachladen der Posts.)</span></div>';
+            }
+        }
+
+        loadFeed();
+    </script>
+</body>
 </html>
